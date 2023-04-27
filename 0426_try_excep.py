@@ -1,11 +1,11 @@
-#x = 10
-#if x > 5:
-    #raise Exception('x should not exceed 5. The value of x was {}'.format(x))
+# x = 10
+# if x > 5:
+#     raise Exception('x should not exceed 5. The value of x was {}'.format(x))
 
 
-#assert x >= 5, 'x should not exceed 5. The value of x was {}'.format(x)
+# assert x >= 5, 'x should not exceed 5. The value of x was {}'.format(x)
 
-#print("Hello World")
+# print("Hello World")
 
 def sum(num1, num2):
     total= num1 + num2
