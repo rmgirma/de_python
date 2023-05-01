@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import re
 
-tree= ET.parse('movies.xml')
+tree= ET.parse('rmgirma/de_python/movies.xml')
 root= tree.getroot()
 print(root)
 print(root.tag)
@@ -53,9 +53,9 @@ for form in root.findall("./genre/decade/movie/format"):
         form.set('multiple','No')
 
 # Write out the tree to the file again
-tree.write("movies.xml")
+tree.write("rmgirma/de_python/movies.xml")
 
-tree = ET.parse('movies.xml')
+tree = ET.parse('rmgirma/de_python/movies.xml')
 root = tree.getroot()
 
 for form in root.findall("./genre/decade/movie/format"):
@@ -81,4 +81,13 @@ dec1990s= root.find("./genre[@category='Action']/decade[@years='1990s']")
 dec1990s.remove(xmen)
 print(ET.tostring(action, encoding='utf8').decode('utf8'))
 
-tree.write("movies.xml")
+tree.write("rmgirma/de_python/movies.xml")
+
+Thriller= root.find("./genre/decade/movie[@title='Thriller']")
+dec1970s= root.find("./genre[@category='Action']/decade[@years='1970s']")
+dec1970s.append(Thriller)
+dec1990s= root.find("./genre[@category='Action']/decade[@years='1990s']")
+dec1990s.remove(Thriller)
+print(ET.tostring(action, encoding='utf8').decode('utf8'))
+
+# tree.write("rmgirma/de_python/movies.xml")
